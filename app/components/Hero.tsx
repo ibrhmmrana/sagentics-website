@@ -43,10 +43,10 @@ export default function Hero() {
       ref={sectionRef}
       className="relative w-full min-h-screen overflow-hidden"
     >
-      {/* Background layer – moves slower */}
+      {/* Background layer – moves slower; mobile: focal point left and down */}
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-cover bg-right bg-no-repeat will-change-transform"
+        className="absolute inset-0 bg-cover bg-no-repeat will-change-transform [background-position:62%_75%] md:bg-right"
         style={{ backgroundImage: "url('/images/bg.svg')" }}
       />
 
@@ -84,9 +84,8 @@ export default function Hero() {
                 "linear-gradient(to right, #111111 0%, #075656 75%, #01D2A5 99%)",
             }}
           >
-            Move AI curiosity to strategic
-            <br />
-            implementation clarity
+            <span className="md:hidden">Move AI curiosity<br />to strategic<br />implementation<br />clarity</span>
+            <span className="hidden md:inline">Move AI curiosity to strategic<br />implementation clarity</span>
           </h1>
 
           {/* Subtext */}
@@ -98,15 +97,17 @@ export default function Hero() {
           {/* CTAs */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="#our-work"
+              href="/#case-studies"
               className="font-display font-medium inline-flex items-center justify-center rounded-[6px] px-7 py-3 text-sm text-white transition-colors hover:brightness-110"
               style={{ backgroundColor: "#20D362" }}
             >
               View our work
             </Link>
 
-            <Link
-              href="#contact-us"
+            <a
+              href="https://wa.me/27686260354"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-display font-medium inline-flex items-center justify-center gap-2 rounded-[6px] border border-neutral-300 bg-white px-7 py-3 text-sm text-neutral-800 hover:bg-neutral-50 transition-colors"
             >
               <Image
@@ -117,7 +118,7 @@ export default function Hero() {
                 className="h-4 w-4"
               />
               Start a conversation
-            </Link>
+            </a>
           </div>
         </div>
       </div>

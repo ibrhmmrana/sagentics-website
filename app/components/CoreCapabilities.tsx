@@ -22,16 +22,16 @@ const capabilities = [
 export default function CoreCapabilities() {
   return (
     <section id="core-capabilities" className="w-full pt-12 md:pt-16 pb-12 md:pb-16 px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-12 md:gap-16">
         {/* Left – diagram with heading overlaid */}
         <div className="md:w-1/2 relative">
-          <div className="mt-2 w-full">
+          <div className="mt-2 w-full hidden md:block">
             <FanDiagram />
           </div>
 
           <AnimatedHeading
             text={"Three core\ncapabilities"}
-            className="absolute top-12 left-0 z-10 font-display text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] font-medium leading-[1.15] tracking-tight bg-clip-text text-transparent"
+            className="md:absolute md:top-12 md:left-0 md:z-10 font-display text-[2.25rem] md:text-[2.75rem] lg:text-[3.25rem] font-medium leading-[1.15] tracking-tight bg-clip-text text-transparent text-left"
             style={{
               backgroundImage:
                 "linear-gradient(to left, #111111 0%, #075656 40%, #01D2A5 100%)",

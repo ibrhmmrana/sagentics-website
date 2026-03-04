@@ -3,10 +3,10 @@ import Link from "next/link";
 import AnimatedCard from "./AnimatedCard";
 
 const navLinks = [
-  { label: "Our Method", href: "#our-method" },
-  { label: "Our scaffolds", href: "#our-scaffolds" },
-  { label: "Core Capabilities", href: "#core-capabilities" },
-  { label: "Contact Us", href: "#contact-us" },
+  { label: "Our Method", href: "/#our-method" },
+  { label: "Our scaffolds", href: "/#our-scaffolds" },
+  { label: "Core Capabilities", href: "/#core-capabilities" },
+  { label: "Contact Us", href: "/#contact-us" },
 ];
 
 export default function Footer() {

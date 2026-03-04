@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Host_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
@@ -19,6 +19,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sagentics",
   description: "Sagentics website",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#F9FBFA",
 };
 
 export default function RootLayout({
