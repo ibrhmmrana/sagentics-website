@@ -46,7 +46,7 @@ export default function Hero() {
       {/* Background layer – moves slower; mobile: focal point left and down */}
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-cover bg-no-repeat will-change-transform [background-position:62%_75%] md:bg-right"
+        className="absolute inset-0 bg-cover bg-no-repeat will-change-transform [background-position:62%_75%] md:bg-right animate-hero-scale-in"
         style={{ backgroundImage: "url('/images/bg.svg')" }}
       />
 
@@ -58,8 +58,9 @@ export default function Hero() {
         <div className="max-w-4xl">
           {/* Pills – infinite rolling marquee */}
           <div
-            className="relative max-w-xl mb-8 overflow-hidden py-4"
+            className="relative max-w-xl mb-8 overflow-hidden py-4 animate-hero-enter"
             style={{
+              animationDelay: "200ms",
               maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
               WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
             }}
@@ -78,8 +79,9 @@ export default function Hero() {
 
           {/* Heading */}
           <h1
-            className="font-display text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.1] font-medium tracking-tight bg-clip-text text-transparent"
+            className="font-display text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.1] font-medium tracking-tight bg-clip-text text-transparent animate-hero-enter"
             style={{
+              animationDelay: "400ms",
               backgroundImage:
                 "linear-gradient(to right, #111111 0%, #075656 75%, #01D2A5 99%)",
             }}
@@ -89,13 +91,13 @@ export default function Hero() {
           </h1>
 
           {/* Subtext */}
-          <p className="mt-6 text-sm md:text-base max-w-4xl leading-relaxed text-[#3E3E3E]">
+          <p className="mt-6 text-sm md:text-base max-w-4xl leading-relaxed text-[#3E3E3E] animate-hero-enter" style={{ animationDelay: "600ms" }}>
             We design AI systems that deliver the essence of your business at
             lower costs and increased productivity
           </p>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-4 animate-hero-enter" style={{ animationDelay: "750ms" }}>
             <Link
               href="/#case-studies"
               className="font-display font-medium inline-flex items-center justify-center rounded-[6px] px-7 py-3 text-sm text-white transition-colors hover:brightness-110"

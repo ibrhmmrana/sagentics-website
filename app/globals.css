@@ -47,3 +47,52 @@ body {
 .animate-marquee {
   animation: marquee 24s linear infinite;
 }
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes header-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-hero-enter {
+  animation: hero-enter 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-header-enter {
+  animation: header-enter 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-hero-scale-in {
+  animation: hero-scale-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

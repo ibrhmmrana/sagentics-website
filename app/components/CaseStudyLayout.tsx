@@ -172,9 +172,18 @@ export default function CaseStudyLayout({
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    scrollToTop();
-    requestAnimationFrame(scrollToTop);
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+    requestAnimationFrame(() => {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      }
+    });
   }, []);
 
   useEffect(() => {

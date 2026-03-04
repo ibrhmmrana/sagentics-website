@@ -16,9 +16,51 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteName = "Sagentics";
+const tagline =
+  "We design AI systems that deliver the essence of your business at lower costs and increased productivity.";
+const defaultTitle = `${siteName} | AI system design and implementation`;
+const defaultDescription =
+  "Sagentics turns AI curiosity into strategic implementation. We design and build AI systems for donor engagement, ecommerce, and SaaS: conversational automation, integration architecture, and continuous optimisation.";
+
 export const metadata: Metadata = {
-  title: "Sagentics",
-  description: "Sagentics website",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://sagentics.ai"),
+  title: {
+    default: defaultTitle,
+    template: `%s | ${siteName}`,
+  },
+  description: defaultDescription,
+  keywords: [
+    "AI system design",
+    "conversational AI",
+    "donor engagement",
+    "ecommerce AI",
+    "WhatsApp automation",
+    "chatbots",
+    "agent-based systems",
+    "AI implementation",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName,
+    title: defaultTitle,
+    description: defaultDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/images/sagentics favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {

@@ -7,7 +7,7 @@ import Link from "next/link";
 const navLinks = [
   { label: "Our Method", href: "/#our-method" },
   { label: "Our scaffolds", href: "/#our-scaffolds" },
-  { label: "Core Capabilities", href: "/#core-capabilities" },
+  { label: "Our Work", href: "/#case-studies" },
   { label: "Contact Us", href: "/#contact-us" },
 ];
 
@@ -97,38 +97,42 @@ export default function Header({ variant = "dark" }: HeaderProps) {
           pointerEvents: scrolled ? "none" : "auto",
         }}
       >
-        <Link href="/" className="shrink-0">
-          <Image
-            src={isLight ? "/images/logo white.svg" : "/images/logo.svg"}
-            alt="sagentics.ai"
-            width={160}
-            height={32}
-            priority
-          />
-        </Link>
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                isLight
-                  ? "text-neutral-400 hover:text-white"
-                  : "text-[#3E3E3E] hover:text-neutral-900"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-12 md:gap-14">
+          <Link href="/" className="shrink-0 animate-header-enter" style={{ animationDelay: "0ms" }}>
+            <Image
+              src={isLight ? "/images/logo white.svg" : "/images/logo.svg"}
+              alt="sagentics.ai"
+              width={160}
+              height={32}
+              priority
+            />
+          </Link>
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors animate-header-enter ${
+                  isLight
+                    ? "text-neutral-400 hover:text-white"
+                    : "text-[#3E3E3E] hover:text-neutral-900"
+                }`}
+                style={{ animationDelay: `${100 + i * 80}ms` }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
         <button
           type="button"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
-          className={`md:hidden shrink-0 p-2 -mr-2 touch-manipulation ${
+          className={`md:hidden shrink-0 p-2 -mr-2 touch-manipulation animate-header-enter ${
             isLight ? "text-white" : "text-neutral-700"
           }`}
+          style={{ animationDelay: "100ms" }}
         >
           <MenuToggle open={menuOpen} />
         </button>
